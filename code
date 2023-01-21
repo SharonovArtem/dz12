@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+
+namespace jun1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string setName = "setName";
+            string name;
+            string changeConsoleColor = "changeConsoleColor";
+            string color;
+            string setPassword = "setPassword";
+            string password;
+            string passwordCheck;
+            string writeName = "writeName";
+            string esc = "esc";
+            string command;
+
+            Console.WriteLine("Привет! Я твой помощник и у меня есть список команд которые я могу выполнять!");
+            Console.WriteLine("Установить имя - " + setName);
+            Console.WriteLine("Изменить цвет консоли - " + changeConsoleColor);
+            Console.WriteLine("Установить пароль" + setPassword);
+            Console.WriteLine("Показать имя - " + writeName);
+            Console.WriteLine("выйти - " + esc);
+            Console.WriteLine("Чего изволите?");
+            command = Console.ReadLine();
+
+            if (command == setName)
+            {
+                Console.WriteLine("Как вас зовут?");
+                name = Console.ReadLine();
+                Console.WriteLine("Установлено имя " + name);
+            }
+
+            else if (command == changeConsoleColor)
+            {
+                Console.BackgroundColor = ConsoleColor.White;
+                Console.Clear();
+            }
+
+            else if (command == setPassword) 
+            {
+                Console.WriteLine("Какой установим пароль?");
+                password = Console.ReadLine();
+                Console.WriteLine("Пароль успешно установлен!");
+            }
+
+            else if (command == writeName)
+            {
+                Console.WriteLine("Сначала введите пароль");
+                passwordCheck = Console.ReadLine();
+                if (passwordCheck == password) { }
+            }
+        }
+    }
+}
