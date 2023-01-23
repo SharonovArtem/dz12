@@ -11,52 +11,26 @@ namespace jun1
     {
         static void Main(string[] args)
         {
-            string setName = "setName";
-            string name;
-            string changeConsoleColor = "changeConsoleColor";
-            string color;
-            string setPassword = "setPassword";
-            string password;
-            string passwordCheck;
-            string writeName = "writeName";
-            string esc = "esc";
+            string setDate = "Set date";
+            string date;
+            string changeFontColor = "Change color";
+            string setAchievement = "Set achievement";
+            string achievement;
+            string showAchievement = "Show achievement";
+            string exit = "Exit";
             string command;
+            bool isWorking = true;
 
             Console.WriteLine("Привет! Я твой помощник и у меня есть список команд которые я могу выполнять!");
-            Console.WriteLine("Установить имя - " + setName);
-            Console.WriteLine("Изменить цвет консоли - " + changeConsoleColor);
-            Console.WriteLine("Установить пароль" + setPassword);
-            Console.WriteLine("Показать имя - " + writeName);
-            Console.WriteLine("выйти - " + esc);
+            Console.WriteLine("Задать дату " + setDate);
+            Console.WriteLine("Создать цель на заданный день" + setAchievement);
+            Console.WriteLine("Изменить цвет шрифта - " + changeFontColor);
+            Console.WriteLine("Показать цели" + showAchievement);
+            Console.WriteLine("выйти - " + exit);
             Console.WriteLine("Чего изволите?");
             command = Console.ReadLine();
 
-            if (command == setName)
-            {
-                Console.WriteLine("Как вас зовут?");
-                name = Console.ReadLine();
-                Console.WriteLine("Установлено имя " + name);
-            }
 
-            else if (command == changeConsoleColor)
-            {
-                Console.BackgroundColor = ConsoleColor.White;
-                Console.Clear();
-            }
-
-            else if (command == setPassword) 
-            {
-                Console.WriteLine("Какой установим пароль?");
-                password = Console.ReadLine();
-                Console.WriteLine("Пароль успешно установлен!");
-            }
-
-            else if (command == writeName)
-            {
-                Console.WriteLine("Сначала введите пароль");
-                passwordCheck = Console.ReadLine();
-                if (passwordCheck == password) { }
-            }
         }
     }
 }
