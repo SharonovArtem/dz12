@@ -11,26 +11,166 @@ namespace jun1
     {
         static void Main(string[] args)
         {
-            string setDate = "Set date";
-            string date;
-            string changeFontColor = "Change color";
-            string setAchievement = "Set achievement";
-            string achievement;
-            string showAchievement = "Show achievement";
-            string exit = "Exit";
+            string userInputDay;
+            string userInputAchievement;
+            int startMondayAchivementNumber = 0;
+            int startTuesdayAchivementNumber = 0;
+            int startWednesdayAchivementNumber = 0;
+            int startThursdayAchivementNumber = 0;
+            int startFridayAchivementNumber = 0;
+            int startSaturdayAchivementNumber = 0;
+            int startSundayAchivementNumber = 0;
+            string[] date = new string[6];
+            string fontColor;
+            string changeFontColor = "2";
+            string setAchievement = "1";
+            string[] mondayAchievement = new string[10];
+            string[] tuesdayAchievement = new string[10];
+            string[] wednesdayAchievement = new string[10];
+            string[] thursdayAchievement = new string[10];
+            string[] fridayAchievement = new string[10];
+            string[] saturdayAchievement = new string[10];
+            string[] sundayAchievement = new string[10];
+            string showAchievement = "3";
+            string exit = "4";
             string command;
             bool isWorking = true;
 
-            Console.WriteLine("Привет! Я твой помощник и у меня есть список команд которые я могу выполнять!");
-            Console.WriteLine("Задать дату " + setDate);
-            Console.WriteLine("Создать цель на заданный день" + setAchievement);
-            Console.WriteLine("Изменить цвет шрифта - " + changeFontColor);
-            Console.WriteLine("Показать цели" + showAchievement);
-            Console.WriteLine("выйти - " + exit);
-            Console.WriteLine("Чего изволите?");
-            command = Console.ReadLine();
+            
 
+            while(isWorking == true)
+            {
+                Console.WriteLine("Привет! Я твой помощник и у меня есть список команд которые я могу выполнять!");
+                Console.WriteLine("Создать цель на заданный день - " + setAchievement);
+                Console.WriteLine("Изменить цвет шрифта - " + changeFontColor);
+                Console.WriteLine("Показать цели - " + showAchievement);
+                Console.WriteLine("выйти - " + exit);
+                Console.WriteLine("Чего изволите?");
+                command = Console.ReadLine();
 
+                if (command == setAchievement)
+                {
+                    Console.WriteLine("Введите день на который хотите поставить цель");
+                    userInputDay = Console.ReadLine();
+                    switch (userInputDay)
+                    {
+                        case "Понедельник":
+                            date[0] = userInputDay;
+                            Console.WriteLine("Введите цель");
+                            userInputAchievement = Console.ReadLine();
+                            mondayAchievement[startMondayAchivementNumber] = userInputAchievement;
+                            Console.WriteLine("Задача " + mondayAchievement[startMondayAchivementNumber] + "Поставлена на день " + userInputDay);
+                            startMondayAchivementNumber++;
+                            break;
+                        case "Вторник":
+                            date[1] = userInputDay;
+                            Console.WriteLine("Введите цель");
+                            userInputAchievement = Console.ReadLine();
+                            tuesdayAchievement[startTuesdayAchivementNumber] = userInputAchievement;
+                            startTuesdayAchivementNumber++;
+                            Console.WriteLine("Задача " + tuesdayAchievement[startTuesdayAchivementNumber] + "Поставлена на день " + userInputDay);
+                            break;
+                        case "Среда":
+                            date[2] = userInputDay;
+                            Console.WriteLine("Введите цель");
+                            userInputAchievement = Console.ReadLine();
+                            wednesdayAchievement[startWednesdayAchivementNumber] = userInputAchievement;
+                            startWednesdayAchivementNumber++;
+                            Console.WriteLine("Задача " + wednesdayAchievement[startWednesdayAchivementNumber] + "Поставлена на день " + userInputDay);
+                            break;
+                        case "Четверг":
+                            date[3] = userInputDay;
+                            Console.WriteLine("Введите цель");
+                            userInputAchievement = Console.ReadLine();
+                            thursdayAchievement[startThursdayAchivementNumber] = userInputAchievement;
+                            startThursdayAchivementNumber++;
+                            Console.WriteLine("Задача " + thursdayAchievement[startThursdayAchivementNumber] + "Поставлена на день " + userInputDay);
+                            break;
+                        case "Пятница":
+                            date[4] = userInputDay;
+                            Console.WriteLine("Введите цель");
+                            userInputAchievement = Console.ReadLine();
+                            fridayAchievement[startFridayAchivementNumber] = userInputAchievement;
+                            startFridayAchivementNumber++;
+                            Console.WriteLine("Задача " + fridayAchievement[startFridayAchivementNumber] + "Поставлена на день " + userInputDay);
+                            break;
+                        case "Суббота":
+                            date[5] = userInputDay;
+                            Console.WriteLine("Введите цель");
+                            userInputAchievement = Console.ReadLine();
+                            saturdayAchievement[startSaturdayAchivementNumber] = userInputAchievement;
+                            startSaturdayAchivementNumber++;
+                            Console.WriteLine("Задача " + saturdayAchievement[startSaturdayAchivementNumber] + "Поставлена на день " + userInputDay);
+                            break;
+                        case "Воскресенье":
+                            date[6] = userInputDay;
+                            Console.WriteLine("Введите цель");
+                            userInputAchievement = Console.ReadLine();
+                            sundayAchievement[startSundayAchivementNumber] = userInputAchievement;
+                            startSundayAchivementNumber++;
+                            Console.WriteLine("Задача " + sundayAchievement[startSundayAchivementNumber] + " Поставлена на день " + userInputDay);
+                            break;
+                    }
+                }
+                else if (command == showAchievement)
+                {
+                    Console.WriteLine("На какой день?");
+                    userInputDay = Console.ReadLine();
+                    switch (userInputDay)
+                    {
+                        case "Понедельник":
+                            Console.WriteLine("На " + date[0] + "вы запланировали");
+                            for (int i = 0; i <=10; i++)
+                            {
+                                Console.WriteLine(mondayAchievement[i]);
+                            }
+                            break;
+                        case "Вторник":
+                            Console.WriteLine("На " + date[1] + "вы запланировали" + tuesdayAchievement);
+                            break;
+                        case "Среда":
+                            Console.WriteLine("На " + date[2] + "вы запланировали" + wednesdayAchievement);
+                            break;
+                        case "Четверг":
+                            Console.WriteLine("На " + date[3] + "вы запланировали" + thursdayAchievement);
+                            break;
+                        case "Пятница":
+                            Console.WriteLine("На " + date[4] + "вы запланировали" + fridayAchievement);
+                            break;
+                        case "Суббота":
+                            Console.WriteLine("На " + date[5] + "вы запланировали" + saturdayAchievement);
+                            break;
+                        case "Воскресенье":
+                            Console.WriteLine("На " + date[6] + "вы запланировали" + sundayAchievement);
+                            break;
+                    }
+                }
+                else if (command == changeFontColor)
+                {
+                    Console.WriteLine("На какой цвет вы хотели бы поменять?");
+                    Console.WriteLine("1 - красный");
+                    Console.WriteLine("2 - зелёный");
+                    Console.WriteLine("3 - жёлтый");
+                    fontColor = Console.ReadLine();
+                    switch (fontColor)
+                    {
+                        case "1":
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            break;
+                        case "2":
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            break;
+                        case "3":
+                            Console.ForegroundColor = ConsoleColor.Yellow;
+                            break;
+                    }
+                }
+                else if (command == exit)
+                {
+                    Console.WriteLine("До свидания!");
+                    isWorking = false;
+                }
+            } 
         }
     }
 }
