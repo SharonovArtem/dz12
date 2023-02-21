@@ -13,13 +13,12 @@ namespace jun1
     {
         static void Main(string[] args)
         {
-            string password = "";
-            string passwordCheck;
-            string setName = "1";
-            string name = "";
-            string setPassword = "2";
-            string showInformation = "3";
-            string esc = "4";
+            string userPassword = "";
+            string setNameCommand = "1";
+            string userName = "";
+            string setPasswordCommand = "2";
+            string showInformationCommand = "3";
+            string exitCommand = "4";
             string command;
             bool isWorking = true;
 
@@ -27,39 +26,41 @@ namespace jun1
 
             while (isWorking)
             {
-                Console.WriteLine("Установить имя - " + setName);
-                Console.WriteLine("Установить пароль - " + setPassword);
-                Console.WriteLine("Показать имя - " + showInformation);
-                Console.WriteLine("выйти - " + esc);
+                Console.WriteLine("Установить имя - " + setNameCommand);
+                Console.WriteLine("Установить пароль - " + setPasswordCommand);
+                Console.WriteLine("Показать имя - " + showInformationCommand);
+                Console.WriteLine("выйти - " + exitCommand);
                 Console.WriteLine("Чего изволите?");
 
                 command = Console.ReadLine();
 
-                if (command == esc)
+                if (command == exitCommand)
                 {
                     Console.WriteLine("До свидания!");
                     isWorking = false;
                 }
-                else if (command == setName)
+                else if (command == setNameCommand)
                 {
                     Console.WriteLine("Введите имя");
-                    name = Console.ReadLine();
+                    userName = Console.ReadLine();
                     Console.WriteLine("Имя успешно сохранено");
                 }
-                else if (command == setPassword)
+                else if (command == setPasswordCommand)
                 {
                     Console.WriteLine("Введите желаемый пароль");
-                    password = Console.ReadLine();
+                    userPassword = Console.ReadLine();
                     Console.WriteLine("Пароль установлен");
                 }
-                else if (command == showInformation)
+                else if (command == showInformationCommand)
                 {
+                    string passwordCheck;
+
                     Console.WriteLine("Введите пароль");
                     passwordCheck = Console.ReadLine();
 
-                    if (passwordCheck == password)
+                    if (passwordCheck == userPassword)
                     {
-                        Console.WriteLine("Имя - " + name);
+                        Console.WriteLine("Имя - " + userName);
                     }
                     else
                     {
